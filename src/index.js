@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+
+import App from './App';
+import Post from './Post';
+
+// In react, we can use functions or classes to create components.
+// A created component will work as an html tag.
+
 ReactDOM.render(
-    <h1 id = "title">
-        <span>supp guys!</span>
-        </h1>,
+    <App />,
     document.getElementById('root')
 );
+
