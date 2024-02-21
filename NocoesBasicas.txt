@@ -55,3 +55,6 @@ Loaders:
     - Pegar algo que o webpack não vai conseguir entender, e transformar em algo que o webpack vai entender.
 
 Apenas um componente pai pode alterar um componente filho
+
+O react não considera objetos um child legitimo. 
+Para fazer isso acontecer, é necessário pegar um array de objetos e botar ele de react child
