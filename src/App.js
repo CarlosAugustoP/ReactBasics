@@ -13,20 +13,30 @@ function App(){
             id: Math.random(),
             title: "Titulo da noticia 01",
             subtitle: "text",
-            likes: 14
+            likes: 14,
+            read: false
         },
         {
             id: Math.random(),
             title: "Titulo da noticia 02",
             subtitle: "text",
-            likes: 20
+            likes: 20,
+            read: true
         },
         {
             id: Math.random(),
             title: "Titulo da noticia 03",
             subtitle: "text",
-            likes: 30
+            likes: 30,
+            read: false
         },
+        {
+            id: Math.random(),
+            title: "Titulo da noticia 04",
+            subtitle: "text",
+            likes: 40,
+            read: false
+        }
     ]);
 
     function handleRefresh(){
@@ -49,6 +59,13 @@ function App(){
     
     }
 
+    function handleRemovePost(postId){
+        setPosts((prevState) => 
+            // If the element is different of postId, it will be thrown into the new array.
+            prevState.filter(post => post.id !== postId)
+        )
+    }
+
     return (
         <>
             <Header >
@@ -59,7 +76,12 @@ function App(){
             <hr />
             {/* A função map itera sobre o array de objetos, desconstruindo cada objeto em suas propriedades. */}
            {posts.map((post, index) => (
-               <Post key={post.id} post={post} likes={post.likes} />
+               <Post 
+               key={post.id}
+               post={post}
+               onRemove={handleRemovePost}
+               likes={post.likes} 
+               />
            ))}
         </>    
     );
