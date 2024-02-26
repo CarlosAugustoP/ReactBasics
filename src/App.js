@@ -8,6 +8,7 @@ const category = 'Posts da semana';
 // JSX forbids a child div to exist without a parent.
 // Using react fragment, we create a ghost element that will not be rendered so JSX shuts up
 function App(){
+    const [theme, setTheme] = useState('dark');
     const [posts, setPosts] = useState([
         {
             id: Math.random(),
@@ -34,10 +35,16 @@ function App(){
             id: Math.random(),
             title: "Titulo da noticia 04",
             subtitle: "text",
+
             likes: 40,
             read: false
         }
     ]);
+
+    function handleToggleTheme(){ 
+        setTheme((prevState) =>
+             prevState === 'light' ? 'dark' : 'light');
+    }
 
     function handleRefresh(){
         console.log('refresh');
@@ -68,7 +75,9 @@ function App(){
 
     return (
         <>
-            <Header >
+            <Header
+                theme = {theme}
+                onToggleTheme = {handleToggleTheme} >
                 <h2>Posts semanais
                     <button onClick = {handleRefresh}>refresh</button>
                 </h2>
@@ -81,6 +90,7 @@ function App(){
                post={post}
                onRemove={handleRemovePost}
                likes={post.likes} 
+               theme = {theme}
                />
            ))}
         </>    

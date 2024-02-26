@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function Button(props){
+    console.log(props.theme);
     return (
         <button onClick = {props.onClick}>
             {props.children}
@@ -11,5 +12,6 @@ export default function Button(props){
 
 Button.propTypes = {
     onClick: PropTypes.func.isRequired,
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    theme: PropTypes.string.isRequired
 }
