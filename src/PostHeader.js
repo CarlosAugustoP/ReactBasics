@@ -10,7 +10,6 @@ export default function PostHeader(props){
             {!props.post.read && props.post.title}
         </strong><br />
         <Button
-        theme = {props.theme}
          onClick = {() => props.onRemove(props.post.id)}>
             Remover
         </Button>
@@ -21,7 +20,6 @@ export default function PostHeader(props){
 }
 
 PostHeader.propTypes = {
-    theme: PropTypes.string.isRequired,
     // define que a função onRemove é uma função
     onRemove: PropTypes.func.isRequired,
     // define que no post precisa ter um objeto com title e subtitle

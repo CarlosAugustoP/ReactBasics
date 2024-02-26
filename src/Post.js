@@ -7,7 +7,6 @@ export default function Post(props){
         <>
             <article>
                 <PostHeader 
-                    theme = {props.theme}
                     onRemove = {props.onRemove} 
                     post = {{
                         id: props.post.id,
@@ -27,7 +26,6 @@ export default function Post(props){
 Post.propTypes = {
     // define que a função onRemove é uma função
     onRemove: PropTypes.func.isRequired,
-    theme: PropTypes.string.isRequired,
     // define que no post precisa ter um objeto com title e subtitle
     post: PropTypes.shape({
         id: PropTypes.number.isRequired,

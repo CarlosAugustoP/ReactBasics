@@ -1,14 +1,16 @@
-import React, {useState} from 'react';
+import React, {useState, createContext} from 'react';
 import Post from './Post';
 import Header from './Header';
+import { ThemeProvider } from './ThemeContext';
 const category = 'Posts da semana';
+
 
 
 // Props -> Properties
 // JSX forbids a child div to exist without a parent.
 // Using react fragment, we create a ghost element that will not be rendered so JSX shuts up
 function App(){
-    const [theme, setTheme] = useState('dark');
+   
     const [posts, setPosts] = useState([
         {
             id: Math.random(),
@@ -41,11 +43,6 @@ function App(){
         }
     ]);
 
-    function handleToggleTheme(){ 
-        setTheme((prevState) =>
-             prevState === 'light' ? 'dark' : 'light');
-    }
-
     function handleRefresh(){
         console.log('refresh');
         // posts.push({
@@ -74,10 +71,9 @@ function App(){
     }
 
     return (
-        <>
+        <ThemeProvider>
             <Header
-                theme = {theme}
-                onToggleTheme = {handleToggleTheme} >
+                 >
                 <h2>Posts semanais
                     <button onClick = {handleRefresh}>refresh</button>
                 </h2>
@@ -90,10 +86,9 @@ function App(){
                post={post}
                onRemove={handleRemovePost}
                likes={post.likes} 
-               theme = {theme}
                />
            ))}
-        </>    
+        </ThemeProvider>    
     );
 }
 
