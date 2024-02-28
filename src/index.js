@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 
 import App from './App';
-import Post from './Post';
+import './index.scss';
 
 // In react, we can use functions or classes to create components.
 // A created component will work as an html tag.

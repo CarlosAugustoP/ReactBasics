@@ -4,7 +4,7 @@ import Header from './Header';
 import { ThemeProvider } from './ThemeContext';
 const category = 'Posts da semana';
 
-
+import styles from './App.scss';
 
 // Props -> Properties
 // JSX forbids a child div to exist without a parent.
@@ -74,7 +74,7 @@ function App(){
         <ThemeProvider>
             <Header
                  >
-                <h2>Posts semanais
+                <h2 className={styles.title}>Posts semanais
                     <button onClick = {handleRefresh}>refresh</button>
                 </h2>
             </Header>
