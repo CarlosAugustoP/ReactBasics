@@ -1,7 +1,7 @@
 import React, {useState, createContext} from 'react';
-import Post from './Post';
-import Header from './Header';
-import { ThemeProvider } from './ThemeContext';
+import Post from '../Post/index.js';
+import Header from '../Header/Index.js';
+import { ThemeProvider } from '../../Context/ThemeContext';
 const category = 'Posts da semana';
 
 import styles from './App.scss';
