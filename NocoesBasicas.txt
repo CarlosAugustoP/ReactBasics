@@ -62,3 +62,5 @@ Para fazer isso acontecer, é necessário pegar um array de objetos e botar ele 
 css Modules -
 Utilizado para instanciar cada vez que criar uma classe css, como por exemplo
 .title em uma nova classe, criando um hash aleatorio e nao forçando o programador a ter que lembrar do nome de cada classe.
+
+classes dinamicas - trocar classe baseado em circunstancias usando scss

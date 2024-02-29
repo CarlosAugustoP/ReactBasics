@@ -17,29 +17,32 @@ function App(){
             title: "Titulo da noticia 01",
             subtitle: "text",
             likes: 14,
-            read: false
+            read: false,
+            removed: true
         },
         {
             id: Math.random(),
             title: "Titulo da noticia 02",
             subtitle: "text",
             likes: 20,
-            read: true
+            read: true,
+            removed: false
         },
         {
             id: Math.random(),
             title: "Titulo da noticia 03",
             subtitle: "text",
             likes: 30,
-            read: false
+            read: false,
+            removed: false
         },
         {
             id: Math.random(),
             title: "Titulo da noticia 04",
             subtitle: "text",
-
             likes: 40,
-            read: false
+            read: false,
+            removed: false
         }
     ]);
 
@@ -66,8 +69,13 @@ function App(){
     function handleRemovePost(postId){
         setPosts((prevState) => 
             // If the element is different of postId, it will be thrown into the new array.
-            prevState.filter(post => post.id !== postId)
-        )
+            prevState.map(
+                post => (
+                    post.id === postId ?
+                    {...post, removed: true}
+                    : post
+                    )
+                ));
     }
 
     return (
