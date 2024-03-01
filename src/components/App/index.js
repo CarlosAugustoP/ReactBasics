@@ -3,7 +3,6 @@ import Post from '../Post/index.js';
 import Header from '../Header/Index.js';
 import { ThemeProvider } from '../../Context/ThemeContext';
 const category = 'Posts da semana';
-
 import styles from './App.scss';
 
 // Props -> Properties
