@@ -4,7 +4,7 @@ import Header from '../Header/Index.js';
 import { ThemeProvider } from '../../Context/ThemeContext';
 const category = 'Posts da semana';
 import styles from './App.scss';
-
+import {Title} from './styles';
 // Props -> Properties
 // JSX forbids a child div to exist without a parent.
 // Using react fragment, we create a ghost element that will not be rendered so JSX shuts up
@@ -81,9 +81,9 @@ function App(){
         <ThemeProvider>
             <Header
                  >
-                <h2 className={styles.title}>Posts semanais
+                <Title as= 'h2'>Posts semanais
                     <button onClick = {handleRefresh}>refresh</button>
-                </h2>
+                </Title>
             </Header>
             <hr />
             {/* A função map itera sobre o array de objetos, desconstruindo cada objeto em suas propriedades. */}
