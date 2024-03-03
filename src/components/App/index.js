@@ -5,6 +5,8 @@ import { ThemeProvider } from '../../Context/ThemeContext';
 const category = 'Posts da semana';
 import styles from './App.scss';
 import {Title} from './styles';
+
+
 // Props -> Properties
 // JSX forbids a child div to exist without a parent.
 // Using react fragment, we create a ghost element that will not be rendered so JSX shuts up

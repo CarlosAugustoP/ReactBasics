@@ -1,0 +1,4 @@
+Theming - 
+Style guide
+Guia de estilos para desenvolver interface, composta de fontes, border radius, etc, quais cores, espaçamento e etc.
+Podemos utilizar styled components para alcança

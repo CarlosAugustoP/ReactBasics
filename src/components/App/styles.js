@@ -13,3 +13,4 @@ export const Title = styled(MainTitle)`
     color: 'white';
     font-family: 'Comic Sans MS', cursive;
 `;
+
